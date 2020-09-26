@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-var person =()=>{
-    return(<h1>thi is me </h1>);
+var person =(prop)=>{
+return(<h1>thi is me {prop.name}</h1>);
 
 };
 export default person;
