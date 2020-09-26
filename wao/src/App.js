@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
 import logo from './logo.svg';
 import './App.css';
+
 
 
 // function App() {
@@ -12,15 +14,15 @@ import './App.css';
 // }
 
 
-class Header extends React.Component{
-  render(){
-    return(
-      <div className="header">
-      <h1>This is Header</h1>
-      </div>
-    )
-  }
-}
+// class Header extends React.Component{
+//   render(){
+//     return(
+//       <div className="header">
+//       <h1>This is Header</h1>
+//       </div>
+//     )
+//   }
+// }
 class Footer extends React.Component{
   render(){
     return(
