@@ -1,6 +1,8 @@
 import React, { createElement } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Person from './person/person';
+import person from './person/person';
 
 // function App() {
 //   return (
@@ -11,7 +13,8 @@ import './App.css';
 // }
 function App(){
   return (
-    createElement("div",{className:'App'},"noce this is googd")
+   
+<Person/>
   );
 }
 // class App extends React.Component{
