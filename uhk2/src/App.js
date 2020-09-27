@@ -14,7 +14,10 @@ import person from './person/person';
 function App(){
   return (
    
-<Person name="uhk"/>
+// {/* <Person name="uhk"/> */}
+
+<Person name="uhk">nice work</Person>
+
   );
 }
 // class App extends React.Component{
