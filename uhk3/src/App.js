@@ -2,47 +2,38 @@ import React , {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './person/person';
-// function App() {
-//   return (
-//     <>
-//      <p>  wao its nice</p> 
-//   <div>its cool</div>
-// </>
-//    );
-  
-// }
-// class App extends React.Component{
-  // state={
-  //   person:[{name:"uhkharry",age:"23"}],
-  //   person2:"nice"
-  // }
 
-  
-  
-   
-  // }
-  // its hook
-  const App=(props)=>{
-   
-  const [personState,newpersonState]=useState({
-    person:[{name:"uhkharry",age:"23"}],
-    person2:"nice"
-  });
-   const btnHandler =()=>{
-    newpersonState({
-      person:[{name:"uhkharry1",age:"232"}],
-      person2:"wll",
-    });
+  class App extends React{
+   render(){
 
+   
+   const state={
+    person:[{name:"uhkharry0",age:"23"},
+    {name:"uhkharry1",age:"24"},
+    {name:"uhkharry2",age:"25"}
+           ],
+    showpersons:false
+   
   }
+  let person=null;
+  if(state.showpersons===true ){
+   person=(<div>
+  
+    <div>  
+       <h1>{state.person[0].name} and {state.person[0].age} </h1>
+       <h1>{state.person[1].name}and {state.person[0].age}</h1>
+       <h1>{state.person[2].name} and {state.person[0].age}</h1>
+       
+       <Person/>
+       </div> 
+      
+      
+      </div>)}
   return( 
+    {person}
+);
   
- <>  
-    <h1>{personState.person[0].name}</h1>
-    <button onClick={btnHandler}>btnn</button>
-    <Person/>
-    </> );
-
-  }
+}
+  
 export default App;
 
