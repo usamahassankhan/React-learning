@@ -1,8 +1,9 @@
-import React, { createElement } from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import Person from './person/person';
+
 
 
 // function App() {
@@ -43,25 +44,32 @@ import Person from './person/person';
 //   }
 // }
 
+const App=props=>{
+  
+     const [state, setstates] = useState(
+      {
+        persons:[{
+          name:"uhkstate",age:25
+                 }]
 
-class App extends React.Component{
-  state={
-    persons:[{
-    name:"uhkstate",age:25
-  }]}
-  btnhandler=()=>{
-    this.setState({
-      persons:[{  
-      name:"uhkstatechange",age:27
-    }]
-  })}
-  render(){
-    return (
+      }
+                                       )
+         
+                 
+const btnhandler=()=>{
+  setstates({
+    persons:[{  
+    name:"uhkstatechange",age:27
+             }]
+                 })    
+
+                    };
+
+   return (   
     <div>
-   <Person name={this.state.persons[0].name}/>
-<button onClick={this.btnhandler}>wO</button>
+   <Person name={state.persons[0].name}/>
+<button onClick={btnhandler}>wO</button>
 </div>
-   );
-  }
-}
+          );
+                    }
  export  default App;
