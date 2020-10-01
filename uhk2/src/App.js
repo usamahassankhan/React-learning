@@ -45,7 +45,12 @@ import Person from './person/person';
 // }
 
 const App=props=>{
-  
+  const style={
+    color:'red',
+    fontsize:'200px'
+
+
+  }
      const [state, setstates] = useState(
       {
         persons:[{
@@ -65,10 +70,21 @@ const btnhandler=()=>{
 
                     };
 
+        const namechangehandler=(event)=>{
+        setstates({
+        persons:[{  
+        name:event.target.value,age:27
+                 }]
+           })    
+                    
+         };
    return (   
     <div>
+      {style}
    <Person name={state.persons[0].name}/>
 <button onClick={btnhandler}>wO</button>
+
+<Person namechng={namechangehandler} />
 </div>
           );
                     }
