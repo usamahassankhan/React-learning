@@ -1,26 +1,34 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Person from './Person/Person'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component{
+state={
+person:[
+  {name:"uhk1",age:"16"},
+   {name:"uhk2",age:"17"},
+    {name:"uhk3",age:"18"},
+  ]
+
+  }
+  dltbtn=(personindex)=>{
+    const persons=[...this.state.person];
+    persons.splice(personindex,1);
+    this.setState({person:persons});
+
+  }
+  
+render(){
+
+   return(  this.state.person.map((person,index)=>{
+    return(<Person  name={person.name}  age={person.age} 
+         click={()=>this.dltbtn(index)} />);
+  }));
+
+        }
+
+                                  }
+
 
 export default App;
